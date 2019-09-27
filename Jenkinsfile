@@ -1,5 +1,5 @@
 stage('Test') {
-    node('docker') { 
+    node('mvnJenkinsAgent') { 
         checkout scm
         try {
             sh 'mvn clean package'
