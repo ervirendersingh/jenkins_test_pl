@@ -2,6 +2,7 @@ package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2018_2.*
 import jetbrains.buildServer.configs.kotlin.v2018_2.BuildType
+import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.MavenBuildStep
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.v2018_2.ui.*
 
@@ -23,6 +24,13 @@ create(DslContext.projectId, BuildType({
         maven {
             goals = "clean test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
+        }
+        maven {
+            name = "clean package"
+            goals = "mvn clean package"
+            dockerImage = "maven:3.6.2-jdk-11"
+            dockerImagePlatform = MavenBuildStep.ImagePlatform.Linux
+            dockerPull = true
         }
     }
 }))
