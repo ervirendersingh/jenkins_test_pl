@@ -28,7 +28,6 @@ create(DslContext.projectId, BuildType({
         maven {
             name = "clean package"
             goals = "mvn clean package"
-            dockerImage = "maven:3.6.2-jdk-11"
             dockerImagePlatform = MavenBuildStep.ImagePlatform.Linux
             dockerPull = true
         }
