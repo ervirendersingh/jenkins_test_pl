@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <project>
   <modelVersion>4.0.0</modelVersion>
-  <name>T2 Config DSL Script</name>
-  <groupId>T2</groupId>
-  <artifactId>T2_dsl</artifactId>
+  <name>T3 Config DSL Script</name>
+  <groupId>T3</groupId>
+  <artifactId>T3_dsl</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <parent>
